@@ -1,5 +1,3 @@
-let t = JSON.parse(FS.readFileSync('data/types.json'));
-
 let canMakeTour = function(room, user) {
     // I'm gonna use this a lot so why not make a function for it
     if (!user.can(room, "%")) return false;

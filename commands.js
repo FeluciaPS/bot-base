@@ -156,7 +156,7 @@ let commands = {
 		'': 'help',
 		help: function(room, user, args) {
 			if (!user.can(room, '%') && room !== user) return;
-			if (!Users.self.can(room, '*')) return room.send(`${Utils.errorCommand("echo create, [time interval], [message interval], [message]"}`);
+			if (!Users.self.can(room, '*')) return room.send(`${Utils.errorCommand("echo create, [time interval], [message interval], [message]")}`);
 			let ret = `<details><summary><b>Echo</b></summary><hr>`;
 			ret += `<b>- create:</b> <code>${Config.char}echo create, [time interval], [message interval], [message]</code> - requires % @ # &<br>`;
 			ret += `<b>- end:</b> <code>${Config.char}echo end</code> - requires % @ # &`;
