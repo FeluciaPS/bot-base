@@ -79,7 +79,6 @@ bot.on('pm', (parts) => {
         Commands[cmd](user, user, args, val);
         logger.emit('cmd', cmd, val);
     }
-    Reminder.parse(user, user, message);
 });
 
 bot.on('j', (parts) => {
