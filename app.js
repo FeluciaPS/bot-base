@@ -87,6 +87,6 @@ bot.on('reload', (file, room) => {
 	let dt = files[f];
 	eval("delete require.cache[require.resolve('./" + dt[1] + "')];");
 	eval(dt[0] + " = require('./" + dt[1] + "');");
-	Send(room, f + " reloaded.");
+	room.send(f + " reloaded.");
     }
 });
