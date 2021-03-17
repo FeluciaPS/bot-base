@@ -1,4 +1,3 @@
-let colors = require('colors');
 let events = require('events');
 module.exports = logger = new events.EventEmitter();
 
