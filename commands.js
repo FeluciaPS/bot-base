@@ -1,8 +1,3 @@
-global.Banlist = JSON.parse(FS.readFileSync('data/banlist.json'));
-global.PokeDex = require('./data/pokedex.js');
-global.fdata = require('./data/formats-data.js');
-global.Items = require('./data/items.js');
-
 let commands = {
     // Utilities
 	th: 'tourhistory',
@@ -18,15 +13,6 @@ let commands = {
 		let ago = Math.floor((Date.now() - room.lasttour[0]) / 60000);
 		return room.send(`**${room.lasttour[1]}** ${ago} minute${ago === 1 ? '' : 's'} ago.`);
 	},
-    hangmon: function(room, user, args) {
-        if (!user.can(room, '%')) return;
-        if (room.tournament) return room.send("You can't play hangman while a tournament is going on");
-        let mons = Object.values(PokeDex);
-        let mon = Utils.select(mons);
-        let gen = getGen(mon);
-        if (gen === 0) gen = "Unofficial";
-        room.send(`/hangman create ${mon.name}, Generation ${gen}`);
-    },
     mail: function(room, user, args, val) {
         let target = args[0];
         let targetid = toId(target);
