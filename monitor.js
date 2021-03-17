@@ -1,3 +1,2 @@
-
 exports.phrases = [];
-exports.monitor = function(user, message) {}
+exports.monitor = function (user, message) {}
